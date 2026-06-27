@@ -1,4 +1,4 @@
-# ✈️ Aero-RAG — Question Answering over Aviation Safety Reports
+# ✈️ Aero-RAG - Question Answering over Aviation Safety Reports
 
 A clean, end-to-end **Retrieval-Augmented Generation (RAG)** pipeline that answers
 natural-language questions about real aviation incidents — **grounded in the source
@@ -49,12 +49,12 @@ system says so instead of inventing one.
                     └────────────────────────────────────────────────────┘
 ```
 
-- **Retrieval** — the question is embedded and matched against report chunks by
+- **Retrieval** : the question is embedded and matched against report chunks by
   cosine similarity (ChromaDB).
-- **Generation** — the retrieved chunks are injected into the prompt of a local
+- **Generation** : the retrieved chunks are injected into the prompt of a local
   instruction-tuned LLM, instructed to answer *only* from that context and to say
   "I don't know" otherwise.
-- **Reliability** — a groundedness score (answer ↔ retrieved-context similarity)
+- **Reliability** : a groundedness score (answer ↔ retrieved-context similarity)
   flags answers that may not be supported by the sources. On the sample question
   set, mean groundedness ≈ **0.83**.
 
