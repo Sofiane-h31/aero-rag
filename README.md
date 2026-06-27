@@ -1,8 +1,8 @@
 # ✈️ Aero-RAG - Question Answering over Aviation Safety Reports
 
 A clean, end-to-end **Retrieval-Augmented Generation (RAG)** pipeline that answers
-natural-language questions about real aviation incidents — **grounded in the source
-reports, with citations** — running fully locally.
+natural-language questions about real aviation incidents (**grounded in the source
+reports, with citations**) running fully locally.
 
 Built on NASA's [ASRS](https://asrs.arc.nasa.gov/) (Aviation Safety Reporting System)
 free-text incident reports.
@@ -11,7 +11,7 @@ free-text incident reports.
 
 Large language models are fluent but ungrounded: they predict the *most plausible*
 answer, not the *most truthful* one. RAG fixes this by retrieving real documents and
-forcing the model to answer from them — and to admit when the answer isn't there.
+forcing the model to answer from them, and to admit when the answer isn't there.
 This repo is a minimal, readable implementation of that idea on a real, messy,
 domain-specific corpus.
 
@@ -67,7 +67,7 @@ system says so instead of inventing one.
 | Generator | `transformers` · `Qwen/Qwen2.5-7B-Instruct` (local) |
 | Reliability | cosine-similarity groundedness check |
 
-Everything is pip-installable and runs locally — no external API keys. A GPU is
+Everything is pip-installable and runs locally (no external API keys). A GPU is
 recommended for the 7B generator (≈16 GB VRAM); see *Tuning* for lighter options.
 
 ## Project layout
@@ -120,7 +120,7 @@ All knobs live in `config.py`:
 ## Limitations & next steps
 
 - The generator is small; answers are only as good as what retrieval surfaces.
-- Groundedness is a heuristic, not a guarantee — a human stays in the loop for
+- Groundedness is a heuristic, not a guarantee, a human stays in the loop for
   anything safety-critical.
 - Natural extensions: a reranker on top of retrieval, an automated faithfulness
   evaluation (LLM-as-judge), and a small web UI.
